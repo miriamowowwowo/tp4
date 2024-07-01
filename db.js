@@ -4,5 +4,5 @@ export const conn = await mysql.createConnection({
     user : 'root',
     password: 'rootroot',
     host: 'localhost',
-    database: 'tp4'
+    database: 'spoticfy'
 });

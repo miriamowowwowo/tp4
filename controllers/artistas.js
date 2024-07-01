@@ -21,7 +21,7 @@ const updateArtista = async (req, res) => {
     const id = req.params.id;
     const nombre = req.body.nombre;
     const [rows, fields] = await conn.query(`UPDATE artistas SET nombre = ? WHERE id = ?`,[nombre,id]);
-    res.send(`Se pudo actualizar de forma correcta`);
+    res.send(`Se logro actualizar de forma correcta`);
 };
 
 const deleteArtista = async (req, res) => {
