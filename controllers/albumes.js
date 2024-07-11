@@ -3,7 +3,7 @@ import { conn } from "../db.js";
 const getAlbumes = async (_, res) => {
     const[rows,fields] = await conn.query(`
     SELECT albumes.id, albumes.nombre, artistas.nombre AS nombre_artista from albumes
-    JOIN aristas on artistas.id=albumes.artista`);
+    JOIN artistas on artistas.id=albumes.artista`);
     res.json(rows);
 };
 
@@ -11,7 +11,7 @@ const getAlbum = async (req, res) => {
     const id = req.params.id;
     const [rows, fields] = await conn.query(`
     SELECT albumes.id,albumes.nombre,artistas.nombre AS nombre_artista from albumes
-    JOIN artistas on artistas.id=AL.artista
+    JOIN artistas on artistas.id=albumes.artista
     WHERE albumes.id= ?`,[id]);
     res.json(rows[0]);
 };
